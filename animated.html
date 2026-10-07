@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>मंगलदीप फाउंडेशन | सेवा • संवर्धन • संगठन</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#071538;--blue:#2152a3;--saffron:#f39a1e;--gold:#f2c14e;--maroon:#a32424;--green:#16a36b}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Noto Sans Devanagari',system-ui,sans-serif;background:var(--navy);color:#eef2ff;line-height:1.7;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+canvas#fx{position:fixed;inset:0;z-index:0;pointer-events:none}
+main,header,footer{position:relative;z-index:1}
+.wrap{max-width:1100px;margin:auto;padding:0 20px}
+/* progress + nav */
+#bar{position:fixed;top:0;left:0;height:4px;width:0;background:linear-gradient(90deg,var(--saffron),var(--gold),var(--green));z-index:50}
+header{position:fixed;top:0;left:0;right:0;z-index:40;backdrop-filter:blur(10px);background:#071538cc;border-bottom:1px solid #ffffff14}
+.nav{max-width:1100px;margin:auto;display:flex;justify-content:space-between;align-items:center;padding:8px 20px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;color:var(--gold)}
+.brand img{width:40px;height:40px;object-fit:contain;filter:drop-shadow(0 0 4px #fff)}
+nav a{margin-left:18px;font-size:.95rem;opacity:.85;position:relative}
+nav a::after{content:"";position:absolute;left:0;bottom:-3px;height:2px;width:0;background:var(--saffron);transition:.3s}
+nav a:hover::after{width:100%}
+/* hero */
+.hero{min-height:100vh;display:flex;align-items:center;text-align:center;padding:100px 0 60px;
+ background:radial-gradient(circle at 50% 35%,#1b3d8f55,transparent 60%)}
+.logo-box{position:relative;width:min(300px,70vw);aspect-ratio:1;margin:0 auto 26px;animation:float 5s ease-in-out infinite}
+.logo-box img{position:absolute;inset:8%;width:84%;height:84%;object-fit:contain;border-radius:50%;padding:10px;background:radial-gradient(circle,#fff7f1ee 55%,#fff7f100 72%)}
+.ring{position:absolute;inset:0;border-radius:50%;border:2px dashed var(--gold);animation:spin 18s linear infinite}
+.ring.r2{inset:-14px;border:2px dotted var(--saffron);animation:spin 28s linear infinite reverse}
+.glow{position:absolute;inset:-30px;border-radius:50%;background:radial-gradient(circle,#f39a1e55,transparent 65%);animation:pulse 3s ease-in-out infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes float{50%{transform:translateY(-14px)}}
+@keyframes pulse{50%{transform:scale(1.15);opacity:.6}}
+.hero h1{font-size:clamp(2.4rem,8vw,5rem);font-weight:800;line-height:1.2;
+ background:linear-gradient(90deg,#ffd27a,#f39a1e,#ff7a59,#ffd27a);background-size:300% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 6s linear infinite}
+@keyframes shine{to{background-position:300% 0}}
+.type{font-size:clamp(1.1rem,3vw,1.7rem);min-height:2.4em;margin:10px 0 24px;color:#cfe0ff}
+.type::after{content:"|";animation:blink 1s infinite;color:var(--saffron)}
+@keyframes blink{50%{opacity:0}}
+.btn{display:inline-block;padding:13px 30px;margin:5px;border-radius:40px;font-weight:700;background:linear-gradient(135deg,var(--saffron),#ff7a59);color:#fff;box-shadow:0 6px 22px #f39a1e55;transition:.25s;border:0;cursor:pointer;font:inherit;font-weight:700}
+.btn:hover{transform:translateY(-4px) scale(1.04);box-shadow:0 10px 30px #f39a1e99}
+.btn.ghost{background:transparent;border:2px solid var(--gold);box-shadow:none}
+.scroll{margin-top:40px;font-size:1.6rem;animation:float 1.6s infinite;opacity:.7}
+/* sections */
+section{padding:80px 0}
+h2{text-align:center;font-size:clamp(1.7rem,4vw,2.5rem);font-weight:800;color:var(--gold)}
+.line{width:90px;height:4px;margin:10px auto 40px;border-radius:4px;background:linear-gradient(90deg,var(--saffron),var(--green));animation:grow 2s ease infinite alternate}
+@keyframes grow{from{width:50px}to{width:130px}}
+.rv{opacity:0;transform:translateY(40px);transition:1s cubic-bezier(.2,.7,.2,1)}
+.rv.l{transform:translateX(-60px)}.rv.r{transform:translateX(60px)}
+.rv.on{opacity:1;transform:none}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:34px;align-items:center}
+.glass{background:#ffffff0f;border:1px solid #ffffff22;border-radius:20px;padding:28px;backdrop-filter:blur(8px)}
+.glass p+p{margin-top:12px}
+.tag{display:inline-block;background:#f39a1e22;border:1px solid var(--saffron);color:var(--gold);border-radius:30px;padding:4px 14px;font-size:.85rem;margin-top:14px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:22px}
+.card{text-align:center;padding:30px 20px;border-radius:20px;background:linear-gradient(160deg,#ffffff14,#ffffff05);border:1px solid #ffffff22;transition:transform .15s,box-shadow .3s;transform-style:preserve-3d;position:relative;overflow:hidden}
+.card::before{content:"";position:absolute;inset:-60%;background:conic-gradient(from 0deg,transparent,#f39a1e55,transparent 30%);animation:spin 6s linear infinite;opacity:0;transition:.4s}
+.card:hover::before{opacity:1}
+.card:hover{box-shadow:0 14px 40px #f39a1e33}
+.card>*{position:relative}
+.card .in{position:absolute;inset:2px;background:#0b1d4d;border-radius:18px}
+.ic{font-size:2.8rem;display:inline-block;animation:float 3s ease-in-out infinite}
+.card h3{color:var(--gold);margin:6px 0}
+.card p{font-size:.95rem;color:#cdd8f5}
+/* stats */
+.stats .grid{text-align:center}
+.stats b{display:block;font-size:3rem;color:var(--saffron);font-weight:800}
+/* marquee */
+.marq{overflow:hidden;white-space:nowrap;border-block:1px solid #ffffff22;background:#ffffff08;padding:14px 0}
+.marq div{display:inline-block;animation:mq 22s linear infinite;font-size:1.3rem;color:var(--gold);font-weight:700}
+@keyframes mq{to{transform:translateX(-50%)}}
+/* contact */
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.contact p{margin-bottom:14px}
+form{display:grid;gap:12px}
+input,textarea{padding:13px;border-radius:12px;border:1px solid #ffffff33;background:#ffffff10;color:#fff;font:inherit}
+input:focus,textarea:focus{outline:2px solid var(--saffron)}
+::placeholder{color:#a9b8e0}
+footer{text-align:center;padding:30px 20px;background:#040d26;font-size:.9rem;color:#aab8e6}
+@media(max-width:780px){.about,.contact{grid-template-columns:1fr}nav a{margin-left:10px;font-size:.85rem}.brand span{display:none}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div id="bar"></div>
+<canvas id="fx"></canvas>
+
+<header>
+  <div class="nav">
+    <a class="brand" href="#home"><img src="logo.png" alt="लोगो"><span>मंगलदीप फाउंडेशन</span></a>
+    <nav><a href="#about">परिचय</a><a href="#work">कार्य</a><a href="#contact">संपर्क</a></nav>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="home">
+  <div class="wrap">
+    <div class="logo-box"><div class="glow"></div><div class="ring r2"></div><div class="ring"></div><img src="logo.png" alt="Mangaldeep Welfare Foundation"></div>
+    <h1>मंगलदीप फाउंडेशन</h1>
+    <div class="type" id="type"></div>
+    <a class="btn" href="#contact">हमसे जुड़ें</a>
+    <a class="btn ghost" href="#work">हमारे कार्य</a>
+    <div class="scroll">⌄</div>
+  </div>
+</section>
+
+<div class="marq"><div id="mq"></div></div>
+
+<section id="about">
+  <div class="wrap">
+    <h2 class="rv">हमारा परिचय</h2><div class="line"></div>
+    <div class="about">
+      <div class="rv l"><img src="banner.png" alt="बैनर" style="border-radius:18px;box-shadow:0 10px 40px #0008"></div>
+      <div class="glass rv r">
+        <p>मंगलदीप फाउंडेशन बालोतरा, राजस्थान की एक सेवा-भावी संस्था है। जैसे एक दीप अंधकार मिटाकर उजाला फैलाता है, वैसे ही हम जरूरतमंद परिवारों के जीवन में उम्मीद और उन्नति की रोशनी पहुँचाते हैं।</p>
+        <p>लोगो के दो हाथ सहयोग और सुरक्षा के प्रतीक हैं, और बीच का दीप मंगल, ज्ञान व नई आशा का।</p>
+        <span class="tag">पंजीकरण: U88900RJ2026NPL114987</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="work">
+  <div class="wrap">
+    <h2 class="rv">हमारे कार्यक्षेत्र</h2><div class="line"></div>
+    <div class="grid">
+      <div class="card rv"><span class="ic">🤲</span><h3>सेवा</h3><p>जरूरतमंदों की सहायता और मानव सेवा।</p></div>
+      <div class="card rv"><span class="ic">🌱</span><h3>संवर्धन</h3><p>पर्यावरण, संस्कृति और समाज का संवर्धन।</p></div>
+      <div class="card rv"><span class="ic">🤝</span><h3>संगठन</h3><p>समाज को जोड़कर सामूहिक विकास।</p></div>
+      <div class="card rv"><span class="ic">📚</span><h3>शिक्षा</h3><p>बच्चों व युवाओं के लिए शिक्षा सहयोग।</p></div>
+      <div class="card rv"><span class="ic">⚕️</span><h3>स्वास्थ्य</h3><p>स्वास्थ्य जागरूकता और चिकित्सा सहायता।</p></div>
+      <div class="card rv"><span class="ic">👩</span><h3>महिला सशक्तिकरण</h3><p>महिलाओं को आत्मनिर्भर बनाने के प्रयास।</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="stats">
+  <div class="wrap grid">
+    <div class="rv"><b data-n="3">0</b>मूल मंत्र</div>
+    <div class="rv"><b data-n="6" data-s="+">0</b>सेवा क्षेत्र</div>
+    <div class="rv"><b data-n="2026">0</b>स्थापना वर्ष</div>
+    <div class="rv"><b data-n="100" data-s="%">0</b>समर्पण</div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <h2 class="rv">संपर्क करें</h2><div class="line"></div>
+    <div class="contact">
+      <div class="glass rv l">
+        <p>📍 <b>कार्यालय:</b><br>न्यू तेरापंथ भवन के पास, बालोतरा (राजस्थान) 344022</p>
+        <p>📞 <b>फ़ोन:</b> <a href="tel:+919413141416" style="color:var(--gold)">9413141416</a></p>
+        <p>👤 <b>संस्थापक</b>, मंगलदीप फाउंडेशन</p>
+        <a class="btn" href="https://wa.me/919413141416" target="_blank" rel="noopener">WhatsApp करें</a>
+      </div>
+      <form id="f" class="rv r">
+        <input id="n" placeholder="आपका नाम" required>
+        <input id="p" type="tel" placeholder="मोबाइल नंबर" required>
+        <textarea id="m" rows="4" placeholder="आपका संदेश"></textarea>
+        <button class="btn" type="submit">WhatsApp से भेजें</button>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>© 2026 मंगलदीप फाउंडेशन | Mangaldeep Welfare Foundation, बालोतरा (राजस्थान)</footer>
+
+<script>
+// marquee
+var words='🪔 सेवा &nbsp;•&nbsp; संवर्धन &nbsp;•&nbsp; संगठन &nbsp;•&nbsp; शिक्षा &nbsp;•&nbsp; स्वास्थ्य &nbsp;•&nbsp; पर्यावरण &nbsp;•&nbsp; महिला सशक्तिकरण &nbsp;•&nbsp; ';
+document.getElementById('mq').innerHTML=words.repeat(6);
+// typewriter
+var lines=['सेवा की ज्योति, समाज की उन्नति','हर घर तक पहुँचे उम्मीद का उजाला','मिलकर जलाएँ मंगलदीप 🪔'],li=0,ci=0,del=false,tp=document.getElementById('type');
+(function tick(){var s=lines[li];tp.textContent=s.slice(0,ci);
+ if(!del&&ci<s.length){ci++;setTimeout(tick,70)}
+ else if(!del){del=true;setTimeout(tick,1500)}
+ else if(ci>0){ci--;setTimeout(tick,35)}
+ else{del=false;li=(li+1)%lines.length;setTimeout(tick,300)}})();
+// scroll progress
+addEventListener('scroll',function(){var h=document.documentElement;
+ document.getElementById('bar').style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%'});
+// reveal + counters
+var io=new IntersectionObserver(function(es){es.forEach(function(e){
+ if(e.isIntersecting){e.target.classList.add('on');
+  var b=e.target.querySelector&&e.target.querySelector('[data-n]');
+  if(b&&!b.d){b.d=1;var t=+b.dataset.n,c=0,st=Math.ceil(t/60);
+   var iv=setInterval(function(){c=Math.min(t,c+st);b.textContent=c+(b.dataset.s||'');if(c>=t)clearInterval(iv)},25)}
+  io.unobserve(e.target)}})},{threshold:.15});
+document.querySelectorAll('.rv').forEach(function(e,i){e.style.transitionDelay=(i%3)*0.12+'s';io.observe(e)});
+// 3D tilt on cards
+document.querySelectorAll('.card').forEach(function(c){
+ c.addEventListener('mousemove',function(e){var r=c.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;
+  c.style.transform='perspective(600px) rotateY('+x*14+'deg) rotateX('+(-y*14)+'deg) scale(1.03)'});
+ c.addEventListener('mouseleave',function(){c.style.transform=''})});
+// floating embers / diya sparks
+var cv=document.getElementById('fx'),cx=cv.getContext('2d'),P=[],W,H;
+function rs(){W=cv.width=innerWidth;H=cv.height=innerHeight}rs();addEventListener('resize',rs);
+var cols=['#f39a1e','#f2c14e','#ff7a59','#16a36b','#ffffff'];
+for(var i=0;i<60;i++)P.push({x:Math.random()*W,y:Math.random()*H,r:Math.random()*2.5+.8,v:Math.random()*.7+.2,s:Math.random()*Math.PI*2,c:cols[i%5]});
+(function draw(){cx.clearRect(0,0,W,H);
+ P.forEach(function(p){p.y-=p.v;p.s+=.02;p.x+=Math.sin(p.s)*.5;if(p.y<-10){p.y=H+10;p.x=Math.random()*W}
+  cx.globalAlpha=.55;cx.fillStyle=p.c;cx.shadowBlur=10;cx.shadowColor=p.c;cx.beginPath();cx.arc(p.x,p.y,p.r,0,7);cx.fill()});
+ requestAnimationFrame(draw)})();
+// whatsapp form
+document.getElementById('f').addEventListener('submit',function(e){e.preventDefault();
+ window.open('https://wa.me/919413141416?text='+encodeURIComponent('नमस्ते, मैं '+n.value+' ('+p.value+').\n'+m.value),'_blank')});
+</script>
+</body>
+</html>
