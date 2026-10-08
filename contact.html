@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us | मंगलदीप फाउंडेशन</title>
+<meta name="description" content="मंगलदीप फाउंडेशन से संपर्क करें। योजना संबंधी जानकारी, सहयोग, दान और अन्य संस्थागत जानकारी के लिए हमसे जुड़ें।">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+:root{
+  --navy:#081b45;
+  --blue:#2364c7;
+  --gold:#d7a83e;
+  --saffron:#ef922d;
+  --cream:#fff8ef;
+  --white:#fff;
+  --ink:#182338;
+  --muted:#68738a;
+  --green:#159447;
+  --line:rgba(8,27,69,.11);
+  --shadow:0 22px 60px rgba(8,27,69,.11);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:"Noto Sans Devanagari","Poppins",sans-serif;
+  color:var(--ink);
+  background:#fff;
+  overflow-x:hidden;
+}
+a{text-decoration:none;color:inherit}
+.container{width:min(1160px,92%);margin:auto}
+header{
+  position:fixed;top:0;left:0;width:100%;z-index:1000;
+  background:rgba(255,255,255,.84);
+  backdrop-filter:blur(18px);
+  border-bottom:1px solid rgba(8,27,69,.08);
+}
+.nav{
+  height:78px;display:flex;align-items:center;justify-content:space-between;gap:25px;
+}
+.brand{display:flex;align-items:center;gap:12px;font-weight:800;color:var(--navy)}
+.brand img{width:48px;height:48px;object-fit:contain}
+.brand span{font-size:18px;line-height:1.15}
+.brand small{display:block;font-family:Poppins;font-size:9px;letter-spacing:1.2px;color:var(--blue);margin-top:3px}
+.navlinks{display:flex;align-items:center;gap:25px;font-family:Poppins,"Noto Sans Devanagari",sans-serif;font-size:14px;font-weight:600}
+.navlinks a{position:relative;color:#34415a;transition:.25s}
+.navlinks a:hover,.navlinks a.active{color:var(--blue)}
+.navlinks a.active:after{
+  content:"";position:absolute;left:0;right:0;bottom:-9px;height:2px;
+  background:linear-gradient(90deg,var(--blue),var(--gold));border-radius:10px
+}
+.navbtn{
+  padding:11px 17px;border-radius:999px;background:var(--navy);color:#fff!important;
+  box-shadow:0 8px 22px rgba(8,27,69,.18)
+}
+.navbtn:hover{background:var(--blue)!important}
+.menu{display:none;border:0;background:none;font-size:23px;color:var(--navy);cursor:pointer}
+
+.hero{
+  min-height:590px;padding:150px 0 90px;position:relative;overflow:hidden;
+  background:
+    radial-gradient(circle at 12% 20%,rgba(35,100,199,.15),transparent 30%),
+    radial-gradient(circle at 90% 15%,rgba(239,146,45,.14),transparent 28%),
+    linear-gradient(135deg,#fffaf2 0%,#fff 48%,#f3f7ff 100%);
+}
+.hero:before,.hero:after{
+  content:"";position:absolute;border-radius:50%;filter:blur(2px);opacity:.65;
+}
+.hero:before{width:330px;height:330px;right:-100px;bottom:-120px;background:rgba(215,168,62,.12)}
+.hero:after{width:260px;height:260px;left:-120px;bottom:40px;background:rgba(35,100,199,.08)}
+.heroGrid{display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:60px;position:relative;z-index:1}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;padding:8px 13px;border-radius:999px;
+  background:#fff;border:1px solid rgba(215,168,62,.35);color:#8a681e;
+  font-size:12px;font-weight:800;letter-spacing:.3px;box-shadow:0 8px 24px rgba(8,27,69,.06)
+}
+.eyebrow i{color:var(--saffron)}
+h1{font-size:clamp(38px,5vw,64px);line-height:1.06;color:var(--navy);margin:20px 0 18px;font-weight:800}
+h1 span{color:var(--blue)}
+.heroText{font-size:17px;line-height:1.9;color:var(--muted);max-width:650px}
+.heroActions{display:flex;gap:13px;flex-wrap:wrap;margin-top:28px}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:9px;
+  padding:13px 20px;border-radius:13px;font-weight:800;font-size:14px;
+  transition:.3s;border:1px solid transparent
+}
+.btnPrimary{background:var(--navy);color:#fff;box-shadow:0 12px 25px rgba(8,27,69,.18)}
+.btnPrimary:hover{transform:translateY(-3px);background:var(--blue)}
+.btnWhats{background:#eaf9ef;color:#0d7c3b;border-color:#c9ecd6}
+.btnWhats:hover{transform:translateY(-3px);background:#dff5e8}
+.heroCard{
+  min-height:360px;border-radius:34px;background:rgba(255,255,255,.75);
+  border:1px solid rgba(8,27,69,.08);box-shadow:var(--shadow);
+  display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;
+  animation:float 5s ease-in-out infinite;
+}
+.heroCard:before{
+  content:"";position:absolute;width:300px;height:300px;border-radius:50%;
+  background:radial-gradient(circle,rgba(35,100,199,.12),transparent 68%);
+}
+.heroLogo{width:210px;height:210px;object-fit:contain;position:relative;z-index:1;filter:drop-shadow(0 20px 25px rgba(8,27,69,.12))}
+.orbit{position:absolute;border:1px dashed rgba(215,168,62,.45);border-radius:50%;animation:spin 18s linear infinite}
+.orbit.one{width:290px;height:290px}
+.orbit.two{width:370px;height:370px;animation-duration:25s;animation-direction:reverse}
+.dot{position:absolute;width:11px;height:11px;background:var(--saffron);border-radius:50%;box-shadow:0 0 0 7px rgba(239,146,45,.12)}
+.dot.a{top:35px;right:110px}.dot.b{bottom:65px;left:90px;background:var(--blue)}
+@keyframes float{50%{transform:translateY(-9px)}}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+section{padding:92px 0}
+.sectionHead{text-align:center;max-width:760px;margin:0 auto 42px}
+.kicker{font-family:Poppins;font-size:12px;letter-spacing:2px;color:var(--gold);font-weight:800;text-transform:uppercase}
+.sectionHead h2{font-size:clamp(29px,4vw,43px);color:var(--navy);margin:10px 0 12px;font-weight:800}
+.sectionHead p{color:var(--muted);line-height:1.8}
+
+.contactGrid{display:grid;grid-template-columns:.85fr 1.15fr;gap:25px;align-items:stretch}
+.infoPanel{
+  border-radius:28px;padding:34px;background:linear-gradient(145deg,var(--navy),#123a80);
+  color:#fff;box-shadow:var(--shadow);position:relative;overflow:hidden
+}
+.infoPanel:after{
+  content:"";position:absolute;width:230px;height:230px;border-radius:50%;
+  right:-110px;bottom:-100px;background:rgba(255,255,255,.06)
+}
+.infoPanel h3{font-size:25px;margin-bottom:10px;position:relative;z-index:1}
+.infoPanel>p{color:rgba(255,255,255,.72);line-height:1.75;font-size:14px;position:relative;z-index:1}
+.infoItem{
+  display:flex;gap:15px;align-items:flex-start;margin-top:25px;position:relative;z-index:1
+}
+.infoIcon{
+  width:44px;height:44px;flex:0 0 44px;border-radius:13px;
+  display:grid;place-items:center;background:rgba(255,255,255,.12);color:#ffd875;font-size:17px
+}
+.infoItem strong{display:block;font-size:14px;margin-bottom:3px}
+.infoItem span,.infoItem a{display:block;color:rgba(255,255,255,.74);font-size:13px;line-height:1.6}
+.infoItem a:hover{color:#fff}
+.socialRow{display:flex;gap:9px;margin-top:28px;position:relative;z-index:1}
+.socialRow a{
+  width:39px;height:39px;border-radius:12px;display:grid;place-items:center;
+  background:rgba(255,255,255,.1);color:#fff;transition:.25s
+}
+.socialRow a:hover{background:var(--gold);transform:translateY(-3px)}
+.formCard{
+  background:#fff;border:1px solid var(--line);border-radius:28px;padding:34px;box-shadow:var(--shadow)
+}
+.formCard h3{font-size:25px;color:var(--navy);margin-bottom:7px}
+.formCard>p{color:var(--muted);font-size:14px;line-height:1.7;margin-bottom:23px}
+.formGrid{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+.field{margin-bottom:15px}
+.field.full{grid-column:1/-1}
+label{display:block;font-size:12px;font-weight:800;color:#34415a;margin-bottom:7px}
+input,textarea,select{
+  width:100%;border:1px solid #dce2eb;background:#fbfcfe;border-radius:12px;
+  padding:13px 14px;font:inherit;font-size:14px;outline:none;color:var(--ink);transition:.2s
+}
+input:focus,textarea:focus,select:focus{border-color:var(--blue);box-shadow:0 0 0 4px rgba(35,100,199,.08);background:#fff}
+textarea{min-height:125px;resize:vertical}
+.formNote{font-size:11px;color:#8992a2;margin-top:11px;line-height:1.6}
+.submit{
+  width:100%;border:0;cursor:pointer;margin-top:3px;padding:14px 18px;border-radius:13px;
+  background:linear-gradient(90deg,var(--green),#0d7e38);color:#fff;font-weight:800;font-family:inherit;
+  box-shadow:0 12px 24px rgba(21,148,71,.18);transition:.25s
+}
+.submit:hover{transform:translateY(-2px)}
+
+.quick{background:var(--cream)}
+.quickGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.quickCard{
+  background:#fff;border:1px solid rgba(8,27,69,.08);border-radius:23px;padding:27px;
+  box-shadow:0 14px 38px rgba(8,27,69,.07);transition:.3s
+}
+.quickCard:hover{transform:translateY(-6px);box-shadow:0 20px 45px rgba(8,27,69,.11)}
+.quickIcon{
+  width:50px;height:50px;border-radius:15px;display:grid;place-items:center;
+  background:#edf4ff;color:var(--blue);font-size:20px;margin-bottom:16px
+}
+.quickCard h3{font-size:18px;color:var(--navy);margin-bottom:8px}
+.quickCard p{font-size:13px;color:var(--muted);line-height:1.75;margin-bottom:15px}
+.quickCard a{font-size:13px;font-weight:800;color:var(--blue)}
+
+.cta{
+  padding:0 0 90px
+}
+.ctaBox{
+  border-radius:30px;padding:42px;display:flex;align-items:center;justify-content:space-between;gap:25px;
+  background:linear-gradient(110deg,#fff8e8,#eef5ff);border:1px solid rgba(215,168,62,.25)
+}
+.ctaBox h2{font-size:29px;color:var(--navy);margin-bottom:8px}
+.ctaBox p{color:var(--muted);font-size:14px;line-height:1.7}
+
+footer{background:#071637;color:#fff;padding:55px 0 25px}
+.footerGrid{display:grid;grid-template-columns:1.3fr .8fr .8fr 1fr;gap:35px}
+.footerBrand{display:flex;gap:12px;align-items:center;margin-bottom:13px}
+.footerBrand img{width:53px;height:53px;object-fit:contain}
+.footerBrand strong{font-size:17px}
+footer p,footer a{color:rgba(255,255,255,.66);font-size:12px;line-height:1.8}
+footer h4{font-size:13px;margin-bottom:13px;color:#fff}
+.footerLinks{display:grid;gap:6px}
+.footerLinks a:hover{color:#ffd875}
+.footerSocial{display:flex;gap:8px;margin-top:13px}
+.footerSocial a{
+  width:35px;height:35px;border-radius:10px;background:rgba(255,255,255,.08);
+  display:grid;place-items:center;color:#fff
+}
+.footerSocial a:hover{background:var(--blue)}
+.copyright{
+  margin-top:35px;padding-top:20px;border-top:1px solid rgba(255,255,255,.09);
+  display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap
+}
+.floatWA{
+  position:fixed;right:20px;bottom:20px;width:58px;height:58px;border-radius:50%;
+  background:#20c463;color:#fff;display:grid;place-items:center;font-size:25px;z-index:999;
+  box-shadow:0 13px 28px rgba(32,196,99,.35);animation:pulse 2.2s infinite
+}
+@keyframes pulse{
+  0%,100%{box-shadow:0 13px 28px rgba(32,196,99,.35)}
+  50%{box-shadow:0 13px 28px rgba(32,196,99,.35),0 0 0 12px rgba(32,196,99,.10)}
+}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+.reveal.show{opacity:1;transform:none}
+
+@media(max-width:900px){
+  .navlinks{
+    position:absolute;top:78px;left:0;width:100%;padding:18px 4%;
+    background:rgba(255,255,255,.97);backdrop-filter:blur(15px);
+    display:none;flex-direction:column;align-items:stretch;gap:0;border-bottom:1px solid var(--line)
+  }
+  .navlinks.open{display:flex}
+  .navlinks a{padding:12px 5px}.navlinks a.active:after{display:none}
+  .navbtn{text-align:center;margin-top:5px}
+  .menu{display:block}
+  .heroGrid,.contactGrid{grid-template-columns:1fr}
+  .hero{padding-top:125px}
+  .heroCard{min-height:310px}
+  .quickGrid{grid-template-columns:1fr 1fr}
+  .footerGrid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:600px){
+  .nav{height:70px}.navlinks{top:70px}
+  .brand img{width:43px;height:43px}.brand span{font-size:15px}
+  .brand small{font-size:7px}
+  .hero{padding:112px 0 65px;min-height:auto}
+  h1{font-size:40px}
+  .heroText{font-size:15px}
+  .heroActions .btn{width:100%}
+  section{padding:68px 0}
+  .heroCard{min-height:280px;border-radius:25px}
+  .heroLogo{width:165px;height:165px}
+  .orbit.one{width:225px;height:225px}.orbit.two{width:285px;height:285px}
+  .formGrid,.quickGrid,.footerGrid{grid-template-columns:1fr}
+  .formCard,.infoPanel{padding:25px}
+  .ctaBox{padding:28px;display:block}
+  .ctaBox .btn{margin-top:18px;width:100%}
+  .copyright{display:block}.copyright p+p{margin-top:5px}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="container nav">
+    <a class="brand" href="index.html">
+      <img src="https://mangaldeep.io/logo.png" alt="मंगलदीप फाउंडेशन लोगो">
+      <span>मंगलदीप फाउंडेशन<small>MANGALDEEP WELFARE FOUNDATION</small></span>
+    </a>
+
+    <button class="menu" id="menuBtn" aria-label="Menu"><i class="fa-solid fa-bars"></i></button>
+
+    <nav class="navlinks" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="schemes.html">Schemes</a>
+      <a href="donation.html">Donation</a>
+      <a href="contact.html" class="active">Contact</a>
+      <a href="contact.html" class="navbtn"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="container heroGrid">
+    <div class="reveal">
+      <div class="eyebrow"><i class="fa-solid fa-headset"></i> हम आपकी सहायता के लिए उपलब्ध हैं</div>
+      <h1>हमसे <span>संपर्क</span> करें</h1>
+      <p class="heroText">
+        मंगलदीप फाउंडेशन की योजनाओं, पात्रता, सहयोग, दान या संस्था से जुड़ी किसी भी जानकारी के लिए
+        हमसे सीधे संपर्क करें। आपकी बात हमारे लिए महत्वपूर्ण है।
+      </p>
+      <div class="heroActions">
+        <a class="btn btnPrimary" href="tel:+919413141416"><i class="fa-solid fa-phone"></i> अभी कॉल करें</a>
+        <a class="btn btnWhats" target="_blank" href="https://wa.me/919413141416"><i class="fa-brands fa-whatsapp"></i> WhatsApp करें</a>
+      </div>
+    </div>
+
+    <div class="heroCard reveal">
+      <div class="orbit one"></div>
+      <div class="orbit two"></div>
+      <span class="dot a"></span><span class="dot b"></span>
+      <img class="heroLogo" src="https://mangaldeep.io/logo.png" alt="Mangaldeep Foundation">
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="sectionHead reveal">
+      <div class="kicker">GET IN TOUCH</div>
+      <h2>संपर्क जानकारी</h2>
+      <p>आप फोन, WhatsApp या नीचे दिए गए संपर्क फॉर्म के माध्यम से मंगलदीप फाउंडेशन से जुड़ सकते हैं।</p>
+    </div>
+
+    <div class="contactGrid">
+      <div class="infoPanel reveal">
+        <h3>मंगलदीप फाउंडेशन</h3>
+        <p>सेवा, सहयोग और सामाजिक उत्थान के उद्देश्य से हम जरूरतमंद परिवारों तक योजनाओं का लाभ पहुंचाने का प्रयास करते हैं।</p>
+
+        <div class="infoItem">
+          <div class="infoIcon"><i class="fa-solid fa-location-dot"></i></div>
+          <div>
+            <strong>पता</strong>
+            <span>बालोतरा, राजस्थान - 344022, भारत</span>
+          </div>
+        </div>
+
+        <div class="infoItem">
+          <div class="infoIcon"><i class="fa-solid fa-phone"></i></div>
+          <div>
+            <strong>फोन</strong>
+            <a href="tel:+919413141416">+91 94131 41416</a>
+          </div>
+        </div>
+
+        <div class="infoItem">
+          <div class="infoIcon"><i class="fa-brands fa-whatsapp"></i></div>
+          <div>
+            <strong>WhatsApp</strong>
+            <a target="_blank" href="https://wa.me/919413141416">WhatsApp पर संदेश भेजें</a>
+          </div>
+        </div>
+
+        <div class="infoItem">
+          <div class="infoIcon"><i class="fa-solid fa-id-card"></i></div>
+          <div>
+            <strong>Registration No.</strong>
+            <span>U88900RJ2026NPL114987</span>
+          </div>
+        </div>
+
+        <div class="socialRow">
+          <a href="https://www.facebook.com/" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://www.youtube.com/" target="_blank" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          <a href="https://wa.me/919413141416" target="_blank" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+      </div>
+
+      <div class="formCard reveal">
+        <h3>अपना संदेश भेजें</h3>
+        <p>नीचे जानकारी भरें। सबमिट करने पर आपका संदेश WhatsApp के माध्यम से फाउंडेशन तक भेजने के लिए खुलेगा।</p>
+
+        <form id="contactForm">
+          <div class="formGrid">
+            <div class="field">
+              <label for="name">नाम *</label>
+              <input id="name" type="text" placeholder="अपना नाम लिखें" required>
+            </div>
+            <div class="field">
+              <label for="phone">मोबाइल नंबर *</label>
+              <input id="phone" type="tel" placeholder="10 अंकों का मोबाइल नंबर" pattern="[0-9]{10}" required>
+            </div>
+            <div class="field">
+              <label for="subject">विषय</label>
+              <select id="subject">
+                <option value="सामान्य जानकारी">सामान्य जानकारी</option>
+                <option value="मायरा योजना">मायरा योजना</option>
+                <option value="पुत्र-पुत्री विवाह योजना">पुत्र-पुत्री विवाह योजना</option>
+                <option value="सुरक्षा सहयोग योजना">सुरक्षा सहयोग योजना</option>
+                <option value="मंगल शिशु सहयोग योजना">मंगल शिशु सहयोग योजना</option>
+                <option value="Donation / दान">Donation / दान</option>
+                <option value="अन्य">अन्य</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="email">ईमेल</label>
+              <input id="email" type="email" placeholder="example@email.com">
+            </div>
+            <div class="field full">
+              <label for="message">संदेश *</label>
+              <textarea id="message" placeholder="आप किस जानकारी या सहायता के बारे में जानना चाहते हैं?" required></textarea>
+            </div>
+          </div>
+          <button class="submit" type="submit"><i class="fa-brands fa-whatsapp"></i> WhatsApp पर संदेश भेजें</button>
+          <div class="formNote">आपके संदेश के साथ आपकी दी गई जानकारी WhatsApp संदेश में शामिल होगी।</div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="quick">
+  <div class="container">
+    <div class="sectionHead reveal">
+      <div class="kicker">QUICK CONTACT</div>
+      <h2>सीधे जुड़ने के आसान तरीके</h2>
+      <p>जिस माध्यम से सुविधा हो, उसी से मंगलदीप फाउंडेशन से संपर्क करें।</p>
+    </div>
+
+    <div class="quickGrid">
+      <div class="quickCard reveal">
+        <div class="quickIcon"><i class="fa-solid fa-phone"></i></div>
+        <h3>फोन पर बात करें</h3>
+        <p>योजना या संस्था से जुड़ी जानकारी के लिए सीधे फोन करें।</p>
+        <a href="tel:+919413141416">+91 94131 41416 <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+
+      <div class="quickCard reveal">
+        <div class="quickIcon"><i class="fa-brands fa-whatsapp"></i></div>
+        <h3>WhatsApp सहायता</h3>
+        <p>अपना प्रश्न लिखकर WhatsApp पर भेजें और जानकारी प्राप्त करें।</p>
+        <a target="_blank" href="https://wa.me/919413141416">WhatsApp खोलें <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+
+      <div class="quickCard reveal">
+        <div class="quickIcon"><i class="fa-solid fa-hand-holding-heart"></i></div>
+        <h3>Donation सहायता</h3>
+        <p>दान से संबंधित जानकारी और बैंक विवरण के लिए Donation पेज देखें।</p>
+        <a href="donation.html">Donation पेज देखें <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="container">
+    <div class="ctaBox reveal">
+      <div>
+        <h2>सेवा से जुड़ना चाहते हैं?</h2>
+        <p>मंगलदीप फाउंडेशन की योजनाओं और सहयोग के बारे में जानने के लिए अभी WhatsApp पर संदेश भेजें।</p>
+      </div>
+      <a class="btn btnPrimary" target="_blank" href="https://wa.me/919413141416?text=नमस्ते%20मंगलदीप%20फाउंडेशन%2C%20मुझे%20आपकी%20सेवाओं%20और%20योजनाओं%20की%20जानकारी%20चाहिए।"><i class="fa-brands fa-whatsapp"></i> अभी संपर्क करें</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footerGrid">
+      <div>
+        <div class="footerBrand">
+          <img src="https://mangaldeep.io/logo.png" alt="मंगलदीप फाउंडेशन">
+          <strong>मंगलदीप फाउंडेशन</strong>
+        </div>
+        <p>सेवा, सहयोग और सामाजिक उत्थान के उद्देश्य से कार्यरत संस्था।</p>
+        <div class="footerSocial">
+          <a href="https://www.facebook.com/" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://www.youtube.com/" target="_blank" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          <a href="https://wa.me/919413141416" target="_blank" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+      </div>
+
+      <div>
+        <h4>मुख्य पेज</h4>
+        <div class="footerLinks">
+          <a href="index.html">Home</a>
+          <a href="about.html">About Us</a>
+          <a href="schemes.html">Schemes</a>
+          <a href="donation.html">Donation</a>
+          <a href="contact.html">Contact Us</a>
+        </div>
+      </div>
+
+      <div>
+        <h4>जानकारी</h4>
+        <div class="footerLinks">
+          <a href="privacy-policy.html">Privacy Policy</a>
+          <a href="terms.html">Terms & Conditions</a>
+          <a href="refund-policy.html">Refund Policy</a>
+          <a href="disclaimer.html">Disclaimer</a>
+          <a href="gallery.html">Gallery</a>
+        </div>
+      </div>
+
+      <div>
+        <h4>संपर्क</h4>
+        <p>बालोतरा, राजस्थान - 344022</p>
+        <p><a href="tel:+919413141416">+91 94131 41416</a></p>
+        <p><a target="_blank" href="https://wa.me/919413141416">WhatsApp पर संपर्क करें</a></p>
+      </div>
+    </div>
+
+    <div class="copyright">
+      <p>© 2026 Mangaldeep Welfare Foundation. All Rights Reserved.</p>
+      <p>Registration No.: U88900RJ2026NPL114987</p>
+    </div>
+  </div>
+</footer>
+
+<a class="floatWA" target="_blank" href="https://wa.me/919413141416" aria-label="WhatsApp">
+  <i class="fa-brands fa-whatsapp"></i>
+</a>
+
+<script>
+const menuBtn=document.getElementById("menuBtn");
+const navLinks=document.getElementById("navLinks");
+menuBtn.addEventListener("click",()=>{
+  navLinks.classList.toggle("open");
+  menuBtn.innerHTML=navLinks.classList.contains("open")
+    ? '<i class="fa-solid fa-xmark"></i>'
+    : '<i class="fa-solid fa-bars"></i>';
+});
+document.querySelectorAll(".navlinks a").forEach(a=>{
+  a.addEventListener("click",()=>{
+    navLinks.classList.remove("open");
+    menuBtn.innerHTML='<i class="fa-solid fa-bars"></i>';
+  });
+});
+
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting) entry.target.classList.add("show");
+  });
+},{threshold:.12});
+document.querySelectorAll(".reveal").forEach(el=>observer.observe(el));
+
+document.getElementById("contactForm").addEventListener("submit",function(e){
+  e.preventDefault();
+  const name=document.getElementById("name").value.trim();
+  const phone=document.getElementById("phone").value.trim();
+  const subject=document.getElementById("subject").value;
+  const email=document.getElementById("email").value.trim();
+  const message=document.getElementById("message").value.trim();
+
+  if(!/^[0-9]{10}$/.test(phone)){
+    alert("कृपया सही 10 अंकों का मोबाइल नंबर दर्ज करें।");
+    return;
+  }
+
+  const text =
+`नमस्ते मंगलदीप फाउंडेशन,
+
+नाम: ${name}
+मोबाइल: ${phone}
+विषय: ${subject}
+ईमेल: ${email || "नहीं दिया गया"}
+
+संदेश:
+${message}`;
+
+  window.open("https://wa.me/919413141416?text="+encodeURIComponent(text),"_blank");
+});
+</script>
+</body>
+</html>
