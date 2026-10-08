@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>About Us | मंगलदीप फाउंडेशन</title>
+<meta name="description" content="मंगलदीप फाउंडेशन के बारे में जानें। सेवा, सहयोग और सामाजिक विकास के लिए समर्पित संस्था।">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<style>
+:root{--navy:#081b45;--blue:#2364c7;--gold:#d7a83e;--saffron:#ef922d;--cream:#fff8ef;--ink:#182338;--muted:#68738a;--green:#159447}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+body{font-family:'Noto Sans Devanagari','Poppins',sans-serif;color:var(--ink);line-height:1.75;background:#fff}
+a{text-decoration:none;color:inherit}.container{width:min(1160px,92%);margin:auto}
+.topbar{background:var(--navy);color:#dfe9ff;font-size:13px}.topbar .inner{min-height:38px;display:flex;justify-content:space-between;align-items:center}
+header{position:sticky;top:0;z-index:100;background:#fffffff2;backdrop-filter:blur(12px);border-bottom:1px solid #081b4512}
+.nav{height:76px;display:flex;align-items:center;justify-content:space-between}.brand{display:flex;align-items:center;gap:10px;font-weight:800;color:var(--navy);font-size:19px}.brand img{width:50px;height:50px;object-fit:contain}
+.navmenu{display:flex;gap:24px;align-items:center;font-size:14px;font-weight:700}.navmenu a:hover{color:var(--saffron)}
+.donate{background:linear-gradient(135deg,var(--saffron),var(--gold));color:#fff!important;padding:10px 18px;border-radius:999px}
+.menu{display:none;border:0;background:none;font-size:25px;color:var(--navy)}
+.hero{padding:85px 0;background:radial-gradient(circle at 85% 25%,#d7a83e35,transparent 28%),linear-gradient(135deg,#fff8ef,#edf4ff);position:relative;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center}.tag{color:#a37017;font-weight:800;font-size:13px}
+.hero h1{font-size:clamp(40px,6vw,68px);line-height:1.1;color:var(--navy);margin:10px 0 18px}.hero h1 span{color:var(--saffron)}
+.hero p{color:var(--muted);font-size:17px;max-width:680px}.hero-logo{background:#fff;border-radius:32px;padding:40px;display:grid;place-items:center;box-shadow:0 25px 70px #081b4515;animation:float 4s ease-in-out infinite}.hero-logo img{width:min(300px,80%);filter:drop-shadow(0 15px 25px #081b4520)}
+.btn{display:inline-flex;align-items:center;gap:8px;margin-top:24px;padding:13px 22px;border-radius:12px;background:var(--navy);color:#fff;font-weight:800}
+section{padding:85px 0}.head{text-align:center;max-width:750px;margin:0 auto 45px}.head small{color:var(--saffron);font-weight:800;letter-spacing:1px}.head h2{color:var(--navy);font-size:clamp(29px,4vw,43px);line-height:1.2;margin:7px 0 12px}.head p{color:var(--muted)}
+.story{display:grid;grid-template-columns:.9fr 1.1fr;gap:55px;align-items:center}.visual{background:linear-gradient(145deg,#fff4dc,#eaf2ff);border-radius:30px;min-height:420px;display:grid;place-items:center;padding:40px}.visual img{width:270px;filter:drop-shadow(0 20px 25px #081b4520)}
+.story h3{font-size:29px;color:var(--navy);margin-bottom:13px}.story p{color:var(--muted);margin-bottom:14px}
+.points{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:22px}.point{padding:13px;background:#f8fbff;border:1px solid #e2eaf5;border-radius:13px;font-weight:700;font-size:14px}.point i{color:var(--green);margin-right:7px}
+.values{background:var(--cream)}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.card{background:#fff;border:1px solid #eee1ce;border-radius:22px;padding:28px;transition:.3s;box-shadow:0 10px 30px #081b450b}.card:hover{transform:translateY(-7px);box-shadow:0 20px 40px #081b4518}.icon{width:58px;height:58px;border-radius:17px;background:#eef4ff;color:var(--blue);display:grid;place-items:center;font-size:24px;margin-bottom:15px}.card h3{color:var(--navy);font-size:20px;margin-bottom:7px}.card p{color:var(--muted);font-size:14px}
+.mission{background:var(--navy);color:#fff}.mission .head h2{color:#fff}.mission .head p{color:#cbd6e9}.mission-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}.mission-card{border:1px solid #ffffff18;background:#ffffff08;border-radius:22px;padding:30px}.mission-card h3{color:#f4c65f;font-size:23px;margin-bottom:8px}.mission-card p{color:#d2dced}
+.cta{padding:50px 0;background:linear-gradient(135deg,#fff8ef,#edf4ff)}.cta-box{background:#fff;border-radius:25px;padding:35px;box-shadow:0 18px 50px #081b4512;display:flex;justify-content:space-between;align-items:center;gap:20px}.cta h2{color:var(--navy);line-height:1.25}.cta p{color:var(--muted)}
+footer{background:#061637;color:#cdd8ed;padding:60px 0 20px}.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:30px}.footer-brand{display:flex;align-items:center;gap:10px;color:#fff;font-size:20px;font-weight:800}.footer-brand img{width:45px;height:45px}footer h4{color:#fff;margin-bottom:14px}footer ul{list-style:none;display:grid;gap:7px}footer li,footer p{font-size:13px;color:#aebbd2}.social{display:flex;gap:8px;margin-top:16px}.social a{width:38px;height:38px;border-radius:11px;background:#ffffff0d;display:grid;place-items:center;color:#fff}.social a:hover{background:var(--saffron)}.bottom{border-top:1px solid #ffffff14;margin-top:40px;padding-top:17px;font-size:12px;display:flex;justify-content:space-between;gap:15px}
+.reveal{opacity:0;transform:translateY(25px);transition:.7s}.reveal.show{opacity:1;transform:none}
+@keyframes float{50%{transform:translateY(-12px)}} 
+@media(max-width:850px){.navmenu{display:none;position:absolute;top:76px;left:0;right:0;background:#fff;padding:18px 5%;flex-direction:column;align-items:stretch}.navmenu.open{display:flex}.menu{display:block}.hero-grid,.story,.mission-grid{grid-template-columns:1fr}.grid{grid-template-columns:1fr 1fr}.footer-grid{grid-template-columns:1fr 1fr}.cta-box{flex-direction:column;align-items:flex-start}}
+@media(max-width:560px){.topbar .inner{justify-content:center}.hero{padding:60px 0}.hero p{font-size:15px}section{padding:65px 0}.points,.grid,.footer-grid{grid-template-columns:1fr}.hero-logo{padding:25px}.bottom{flex-direction:column}}
+</style>
+</head>
+<body>
+
+<div class="topbar"><div class="container inner"><span>मंगलदीप फाउंडेशन • बालोतरा, राजस्थान</span><span><i class="fa-solid fa-phone"></i> 9413141416</span></div></div>
+
+<header><div class="container nav">
+<a class="brand" href="index.html"><img src="https://mangaldeep.io/logo.png" alt="मंगलदीप फाउंडेशन"><span>मंगलदीप फाउंडेशन</span></a>
+<button class="menu" id="menu"><i class="fa-solid fa-bars"></i></button>
+<nav class="navmenu" id="nav">
+<a href="index.html">होम</a><a href="about.html">About Us</a><a href="index.html#schemes">योजनाएँ</a><a href="index.html#contact">संपर्क</a>
+<a class="donate" href="index.html#donation" onclick="window.parent && window.parent.openDonation ? window.parent.openDonation() : null"><i class="fa-solid fa-heart"></i> Donation</a>
+</nav></div></header>
+
+<main>
+<section class="hero"><div class="container hero-grid">
+<div class="reveal"><div class="tag">ABOUT MANGALDEEP FOUNDATION</div><h1>सेवा की सोच,<br><span>सहयोग का संकल्प।</span></h1><p>मंगलदीप फाउंडेशन एक सेवा-भावी संस्था है, जिसका उद्देश्य जरूरतमंद परिवारों और समाज के विभिन्न वर्गों तक सहयोग, सुरक्षा और सकारात्मक बदलाव की भावना पहुँचाना है।</p><a class="btn" href="index.html#schemes"><i class="fa-solid fa-arrow-right"></i> हमारी योजनाएँ देखें</a></div>
+<div class="hero-logo reveal"><img src="https://mangaldeep.io/logo.png" alt="मंगलदीप फाउंडेशन लोगो"></div>
+</div></section>
+
+<section><div class="container"><div class="head reveal"><small>WHO WE ARE</small><h2>मंगलदीप फाउंडेशन के बारे में</h2><p>एक ऐसी पहल जहाँ सामाजिक सहयोग को व्यवस्थित प्रयासों के साथ आगे बढ़ाने का संकल्प है।</p></div>
+<div class="story"><div class="visual reveal"><img src="https://mangaldeep.io/logo.png" alt="Mangaldeep Foundation Logo"></div>
+<div class="reveal"><h3>उम्मीद की रोशनी को आगे बढ़ाना</h3>
+<p>मंगलदीप फाउंडेशन (Mangaldeep Welfare Foundation) बालोतरा, राजस्थान स्थित एक सेवा-भावी संस्था है। जिस प्रकार दीपक अंधकार को दूर कर प्रकाश फैलाता है, उसी भावना के साथ फाउंडेशन सामाजिक सहयोग और जरूरतमंदों तक सहायता पहुँचाने के उद्देश्य से कार्य करता है।</p>
+<p>हमारा प्रयास है कि परिवारों और समाज के जरूरतमंद वर्गों को योजनाओं के माध्यम से उचित जानकारी, सहयोग और सहायता उपलब्ध हो सके।</p>
+<div class="points"><div class="point"><i class="fa-solid fa-check-circle"></i> सेवा और सहयोग</div><div class="point"><i class="fa-solid fa-check-circle"></i> परिवार कल्याण</div><div class="point"><i class="fa-solid fa-check-circle"></i> सामाजिक सुरक्षा</div><div class="point"><i class="fa-solid fa-check-circle"></i> सामुदायिक विकास</div></div>
+<p style="margin-top:20px;font-size:13px"><b>पंजीकरण नं.:</b> U88900RJ2026NPL114987</p></div></div></div></section>
+
+<section class="values"><div class="container"><div class="head reveal"><small>OUR VALUES</small><h2>हमारे मूल मूल्य</h2><p>हमारे हर प्रयास के केंद्र में इंसान, परिवार और समाज है।</p></div>
+<div class="grid">
+<div class="card reveal"><div class="icon"><i class="fa-solid fa-hands-holding-heart"></i></div><h3>सेवा</h3><p>जरूरतमंदों तक सहयोग और सहायता पहुँचाने की भावना के साथ कार्य करना।</p></div>
+<div class="card reveal"><div class="icon"><i class="fa-solid fa-people-group"></i></div><h3>सहयोग</h3><p>समाज के लोगों को साथ लेकर सामूहिक सहयोग की मजबूत भावना विकसित करना।</p></div>
+<div class="card reveal"><div class="icon"><i class="fa-solid fa-shield-heart"></i></div><h3>सुरक्षा</h3><p>परिवारों और जरूरतमंद वर्गों के लिए सामाजिक सुरक्षा और सहयोग को बढ़ावा देना।</p></div>
+<div class="card reveal"><div class="icon"><i class="fa-solid fa-seedling"></i></div><h3>विकास</h3><p>समाज में सकारात्मक और स्थायी विकास की दिशा में योगदान देना।</p></div>
+<div class="card reveal"><div class="icon"><i class="fa-solid fa-handshake"></i></div><h3>विश्वास</h3><p>सामाजिक कार्यों में पारदर्शिता, जिम्मेदारी और भरोसे की भावना को महत्व देना।</p></div>
+<div class="card reveal"><div class="icon"><i class="fa-solid fa-lightbulb"></i></div><h3>उम्मीद</h3><p>हर पहल के माध्यम से बेहतर भविष्य की उम्मीद को मजबूत करना।</p></div>
+</div></div></section>
+
+<section class="mission"><div class="container"><div class="head reveal"><small style="color:#f4c65f">OUR DIRECTION</small><h2>हमारा उद्देश्य और दृष्टिकोण</h2><p>सेवा को योजनाबद्ध सामाजिक सहयोग में बदलना और अधिक लोगों तक पहुँच बनाना।</p></div>
+<div class="mission-grid"><div class="mission-card reveal"><h3><i class="fa-solid fa-bullseye"></i> हमारा उद्देश्य</h3><p>जरूरतमंद परिवारों और समाज के विभिन्न वर्गों को योजनाओं एवं सहयोग के माध्यम से सहायता और सकारात्मक अवसर उपलब्ध कराने की दिशा में कार्य करना।</p></div>
+<div class="mission-card reveal"><h3><i class="fa-solid fa-eye"></i> हमारा दृष्टिकोण</h3><p>ऐसा सामाजिक वातावरण बनाना जहाँ सहयोग, संवेदना और सामुदायिक भागीदारी के माध्यम से लोगों के जीवन में बेहतर बदलाव की संभावनाएँ मजबूत हों।</p></div></div></div></section>
+
+<section><div class="container"><div class="head reveal"><small>OUR INITIATIVES</small><h2>चार प्रमुख योजनाएँ</h2><p>फाउंडेशन की प्रमुख योजनाओं के बारे में जानने और जुड़ने के लिए हमारी टीम से संपर्क करें।</p></div>
+<div class="grid">
+<div class="card reveal"><div class="icon"><i class="fa-solid fa-child-reaching"></i></div><h3>मायरा योजना</h3><p>योजना से जुड़ी जानकारी और प्रक्रिया के लिए फाउंडेशन से संपर्क करें।</p></div>
+<div class="card reveal"><div class="icon"><i class="fa-solid fa-ring"></i></div><h3>पुत्र-पुत्री विवाह योजना</h3><p>विवाह से संबंधित सामाजिक सहयोग की जानकारी के लिए संपर्क करें।</p></div>
+<div class="card reveal"><div class="icon"><i class="fa-solid fa-shield-heart"></i></div><h3>सुरक्षा सहयोग योजना</h3><p>सामाजिक सुरक्षा एवं सहयोग से जुड़ी जानकारी प्राप्त करें।</p></div>
+<div class="card reveal"><div class="icon"><i class="fa-solid fa-baby"></i></div><h3>मंगल शिशु सहयोग योजना</h3><p>बच्चों और परिवारों से संबंधित सहयोग की जानकारी के लिए संपर्क करें।</p></div>
+</div></div></section>
+
+<section class="cta"><div class="container"><div class="cta-box reveal"><div><h2>हमारे साथ सामाजिक सहयोग की यात्रा में जुड़ें।</h2><p>किसी योजना की जानकारी या फाउंडेशन से जुड़ने के लिए WhatsApp करें।</p></div><a class="btn" style="margin:0;background:#159447" href="https://wa.me/919413141416?text=नमस्ते%20मंगलदीप%20फाउंडेशन%2C%20मुझे%20आपकी%20संस्था%20के%20बारे%20में%20जानकारी%20चाहिए।" target="_blank"><i class="fa-brands fa-whatsapp"></i> WhatsApp करें</a></div></div></section>
+</main>
+
+<footer><div class="container"><div class="footer-grid">
+<div><div class="footer-brand"><img src="https://mangaldeep.io/logo.png" alt="">मंगलदीप फाउंडेशन</div><p style="margin-top:14px">सेवा, संवर्धन और संगठन की भावना के साथ सामाजिक सहयोग के लिए समर्पित।</p><div class="social"><a href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a><a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a><a href="https://www.youtube.com/" target="_blank"><i class="fa-brands fa-youtube"></i></a><a href="https://wa.me/919413141416" target="_blank"><i class="fa-brands fa-whatsapp"></i></a></div></div>
+<div><h4>मुख्य पेज</h4><ul><li><a href="index.html">होम</a></li><li><a href="about.html">About Us</a></li><li><a href="index.html#schemes">योजनाएँ</a></li><li><a href="index.html#contact">संपर्क</a></li></ul></div>
+<div><h4>योजनाएँ</h4><ul><li><a href="index.html#schemes">मायरा योजना</a></li><li><a href="index.html#schemes">पुत्र-पुत्री विवाह योजना</a></li><li><a href="index.html#schemes">सुरक्षा सहयोग योजना</a></li><li><a href="index.html#schemes">मंगल शिशु सहयोग योजना</a></li></ul></div>
+<div><h4>महत्वपूर्ण लिंक</h4><ul><li><a href="privacy-policy.html">Privacy Policy</a></li><li><a href="terms.html">Terms & Conditions</a></li><li><a href="refund-policy.html">Refund / Cancellation</a></li><li><a href="contact.html">Contact Us</a></li></ul></div>
+</div><div class="bottom"><span>© 2026 Mangaldeep Welfare Foundation. All Rights Reserved.</span><span>पंजीकरण नं. U88900RJ2026NPL114987</span></div></div></footer>
+
+<script>
+const menu=document.getElementById('menu'),nav=document.getElementById('nav');
+menu.onclick=()=>nav.classList.toggle('open');
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(e=>io.observe(e));
+</script>
+</body>
+</html>
