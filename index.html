@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="hi">
 <head>
@@ -146,7 +145,9 @@ section{padding:90px 0}
 .about-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:50px;align-items:center}
 .about-visual{background:linear-gradient(145deg,#f9f0df,#eaf2ff);border-radius:30px;padding:35px;min-height:400px;display:grid;place-items:center;position:relative;overflow:hidden}
 .about-visual .seal{width:240px;height:240px;flex-shrink:0;border-radius:50%;background:linear-gradient(145deg,#fffdf8,#fff);display:grid;place-items:center;text-align:center;box-shadow:0 18px 42px rgba(8,27,69,.16),inset 0 0 0 2px #fff;border:5px solid #d7a83e;outline:3px solid rgba(18,63,145,.18);outline-offset:5px;color:var(--navy);padding:12px;overflow:hidden;position:relative}
-.about-visual .seal:before{content:"";position:absolute;inset:9px;border:1px solid rgba(215,168,62,.55);border-radius:50%;pointer-events:none}\n.about-visual .seal img{width:100%;height:100%;max-width:175px;max-height:175px;object-fit:contain;position:relative;z-index:1}\n.seal i{font-size:58px;color:var(--gold);display:block}
+.about-visual .seal:before{content:"";position:absolute;inset:9px;border:1px solid rgba(215,168,62,.55);border-radius:50%;pointer-events:none}
+.about-visual .seal img{width:100%;height:100%;max-width:175px;max-height:175px;object-fit:contain;position:relative;z-index:1}
+.seal i{font-size:58px;color:var(--gold);display:block}
 .about-copy h3{font-size:28px;color:var(--navy);margin-bottom:12px}
 .about-copy p{color:var(--muted);margin-bottom:13px}
 .checks{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:22px}
@@ -248,7 +249,8 @@ footer li a:hover{color:#fff}
 .app-symbol-inner{width:190px;height:190px;background:#fff;border:1px solid #e8edf4;border-radius:36px;box-shadow:var(--shadow);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:20px}
 .app-symbol-inner img{width:115px;height:115px;object-fit:contain}
 .app-symbol-inner span{font-size:11px;font-weight:800;color:var(--navy);text-align:center}
-\n@media(max-width:900px){
+
+@media(max-width:900px){
   .nav-menu{display:none;position:absolute;top:76px;left:0;right:0;background:#fff;padding:18px 5%;box-shadow:0 15px 30px #0001;flex-direction:column;align-items:stretch}
   .nav-menu.open{display:flex}.menu-btn{display:block}
   .hero{min-height:auto;padding:80px 0}.hero-grid,.about-grid,.contact-grid,.app-download-box{grid-template-columns:1fr}
@@ -265,6 +267,97 @@ footer li a:hover{color:#fff}
   .cta-box{padding:28px}.cta-box h2{font-size:25px}
   .footer-bottom{flex-direction:column}.float-wa{right:15px;bottom:15px}
 }
+
+/* Responsive refinements for desktop, tablet and mobile */
+.container{width:min(1160px, calc(100% - 48px))}
+.nav{min-width:0}
+.brand{min-width:0}
+.brand span{overflow-wrap:anywhere}
+.nav-menu{gap:clamp(12px,1.7vw,24px)}
+.hero-grid{grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr)}
+.hero-grid>*{min-width:0}
+.about-grid,.contact-grid,.app-download-box{min-width:0}
+.scheme-card,.impact-item,.contact-card,.form-card{min-width:0}
+input,textarea,button{max-width:100%}
+.footer-bottom{align-items:center;flex-wrap:wrap}
+.developer-credit{color:#aebbd2}
+.developer-credit a{color:#f4c65f;font-weight:800;text-decoration:none}
+.developer-credit a:hover{text-decoration:underline}
+@media (min-width:901px) and (max-width:1120px){
+  .nav{gap:14px}
+  .brand{font-size:16px;gap:8px}
+  .brand img{width:44px;height:44px}
+  .nav-menu{gap:12px;font-size:12px}
+  .nav-donate{padding:9px 12px}
+  .hero-grid{gap:30px}
+  .scheme-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .footer-grid{gap:22px}
+}
+@media (max-width:900px){
+  .container{width:min(100% - 36px, 720px)}
+  .nav{height:72px}
+  .nav-menu{top:72px;max-height:calc(100vh - 72px);overflow-y:auto;gap:15px}
+  .nav-menu a{padding:5px 0}
+  .hero-grid{grid-template-columns:minmax(0,1fr);gap:22px}
+  .hero{padding:65px 0}
+  .hero-grid>div:first-child{text-align:center}
+  .hero p{margin-inline:auto}
+  .hero-actions{justify-content:center}
+  .hero-art{min-height:350px}
+  .orbit{max-width:80vw;max-height:80vw}
+  .about-grid,.contact-grid,.app-download-box{grid-template-columns:minmax(0,1fr);gap:26px}
+  .about-visual{min-height:300px}
+  .scheme-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .impact-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .footer-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:28px}
+  .app-symbol{min-height:220px}
+}
+@media (max-width:600px){
+  .container{width:calc(100% - 30px)}
+  .topbar{font-size:11px}
+  .nav{height:66px}
+  .nav-menu{top:66px}
+  .brand{font-size:14px;gap:8px}
+  .brand img{width:39px;height:39px}
+  .hero{padding:52px 0}
+  .hero h1{font-size:clamp(32px,9vw,43px);overflow-wrap:anywhere}
+  .hero p{font-size:14px}
+  .hero-actions{display:grid;grid-template-columns:1fr;width:100%}
+  .hero-actions .btn{width:100%;padding:12px 14px}
+  .hero-art{min-height:300px}
+  .hero-card{width:min(100%,330px);padding:22px}
+  .hero-card h3{font-size:23px}
+  .orbit{width:275px;height:275px}
+  section{padding:55px 0}
+  .section-head{margin-bottom:30px}
+  .section-head h2{font-size:clamp(26px,7vw,34px)}
+  .about-visual{padding:22px;min-height:250px}
+  .about-visual .seal{width:190px;height:190px}
+  .checks,.scheme-grid,.impact-grid,.footer-grid{grid-template-columns:minmax(0,1fr)}
+  .scheme-card p{min-height:0}
+  .impact-item strong{font-size:32px}
+  .cta{padding:38px 0}
+  .cta-box{padding:24px 20px;border-radius:20px}
+  .cta-box h2{font-size:24px}
+  .contact-card,.form-card{padding:22px 18px}
+  .contact-line{align-items:flex-start}
+  .app-download{padding:48px 0}
+  .app-download-box{padding:22px 18px;border-radius:20px}
+  .store-badges{display:grid;grid-template-columns:1fr}
+  .store-badge{min-width:0;width:100%}
+  .app-symbol{min-height:190px}
+  .app-symbol-inner{width:155px;height:155px;border-radius:26px}
+  .app-symbol-inner img{width:90px;height:90px}
+  footer{padding:42px 0 18px}
+  .footer-bottom{align-items:flex-start;flex-direction:column;gap:9px;margin-top:30px}
+  .float-wa{width:50px;height:50px;font-size:24px;right:12px;bottom:12px}
+  .modal-box{padding:25px 18px;max-height:90vh;overflow-y:auto}
+  .bank-row{font-size:12px;gap:10px;overflow-wrap:anywhere}
+}
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+}
+
 </style>
 </head>
 
@@ -286,11 +379,12 @@ footer li a:hover{color:#fff}
       <img src="https://mangaldeep.io/logo.png" alt="मंगलदीप फाउंडेशन लोगो">
       <span>मंगलदीप फाउंडेशन</span>
     </a>
-    <button class="menu-btn" id="menuBtn" aria-label="Menu"><i class="fa-solid fa-bars"></i></button>
+    <button class="menu-btn" id="menuBtn" aria-label="Menu" aria-controls="navMenu" aria-expanded="false"><i class="fa-solid fa-bars"></i></button>
     <nav class="nav-menu" id="navMenu">
       <a href="#home">होम</a>
       <a href="#about">हमारे बारे में</a>
-      <a href="#schemes">योजनाएँ</a>\n      <a href="#app-download">ऐप डाउनलोड</a>
+      <a href="#schemes">योजनाएँ</a>
+      <a href="#app-download">ऐप डाउनलोड</a>
       <a href="#impact">हमारा प्रभाव</a>
       <a href="#contact">संपर्क</a>
       <a href="https://razorpay.me/@mangaldeepfoundation" class="nav-donate" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-heart"></i> Donation</a>
@@ -441,7 +535,8 @@ footer li a:hover{color:#fff}
     </div>
   </div>
 </section>
-\n<section class="cta">
+
+<section class="cta">
   <div class="container">
     <div class="cta-box reveal">
       <div>
@@ -541,8 +636,9 @@ footer li a:hover{color:#fff}
     </div>
 
     <div class="footer-bottom">
-      <span>© 2026 Mangaldeep Welfare Foundation. All Rights Reserved.</span>
+      <span>© <span id="currentYear">2026</span> Mangaldeep Welfare Foundation. All Rights Reserved.</span>
       <span>पंजीकरण नं. U88900RJ2026NPL114987</span>
+      <span class="developer-credit">Designed &amp; Developed by <a href="https://morihix.com/" target="_blank" rel="noopener noreferrer">MORIHIX PRIVATE LIMITED</a></span>
     </div>
   </div>
 </footer>
@@ -584,8 +680,8 @@ footer li a:hover{color:#fff}
 <script>
 const menuBtn=document.getElementById('menuBtn');
 const navMenu=document.getElementById('navMenu');
-menuBtn.addEventListener('click',()=>navMenu.classList.toggle('open'));
-document.querySelectorAll('.nav-menu a').forEach(a=>a.addEventListener('click',()=>navMenu.classList.remove('open')));
+menuBtn.addEventListener('click',()=>{const isOpen=navMenu.classList.toggle('open');menuBtn.setAttribute('aria-expanded',String(isOpen));});
+document.querySelectorAll('.nav-menu a').forEach(a=>a.addEventListener('click',()=>{navMenu.classList.remove('open');menuBtn.setAttribute('aria-expanded','false');}));
 
 function openDonation(){document.getElementById('donationModal').classList.add('show');document.body.style.overflow='hidden'}
 function closeDonation(){document.getElementById('donationModal').classList.remove('show');document.body.style.overflow=''}
@@ -596,6 +692,7 @@ const observer=new IntersectionObserver(entries=>{
   entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}})
 },{threshold:.12});
 document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+const yearEl=document.getElementById('currentYear'); if(yearEl) yearEl.textContent=new Date().getFullYear();
 
 document.getElementById('contactForm').addEventListener('submit',function(e){
   e.preventDefault();
@@ -617,5 +714,6 @@ document.getElementById('contactForm').addEventListener('submit',function(e){
   "inLanguage": "hi-IN"
 }
 </script>
-\n</body>
+
+</body>
 </html>
